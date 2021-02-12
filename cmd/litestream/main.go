@@ -67,6 +67,8 @@ func (m *Main) Run(ctx context.Context, args []string) (err error) {
 		return (&VersionCommand{}).Run(ctx, args)
 	case "wal":
 		return (&WALCommand{}).Run(ctx, args)
+	case "dashborg":
+		return (&DashborgCommand{}).Run(ctx, args)
 	default:
 		if cmd == "" || cmd == "help" || strings.HasPrefix(cmd, "-") {
 			m.Usage()
